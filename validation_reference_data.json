@@ -1,0 +1,245 @@
+{
+  "schema_version": "1.0",
+  "generator": "tools/generate_reference.py (stdlib-only, independent of brayton_cycle)",
+  "units": {
+    "T": "K",
+    "P": "Pa",
+    "h": "J/kg",
+    "s": "J/(kg*K)",
+    "w,q": "J/kg",
+    "sfc": "kg/kWh",
+    "power": "W",
+    "mass_flow": "kg/s"
+  },
+  "reference_state": {
+    "T_ref": 298.15,
+    "P_ref": 101325.0,
+    "citation": "[1] Ch. 15; P_ref 1 atm definitional [FLAG]"
+  },
+  "assumptions": [
+    "Air-standard: working fluid is air at all stations; fuel mass addition is neglected in the turbine mass flow (f only used for SFC / fuel flow).",
+    "Steady flow, adiabatic compressor and turbine, KE and PE neglected.",
+    "Combustor heat supplied from a source at T_source = T3 (max cycle temperature).",
+    "Heat rejected to a sink at T_sink = T1 (ambient).",
+    "P4 = P1 (no exhaust pressure loss); combustor loss P3 = P2 (1 - dP_comb).",
+    "Combustor solved in target-T3 mode; the reported f is the input for the fuel-air-ratio-mode test, which must reproduce T3."
+  ],
+  "cases": {
+    "A_ideal_cold_air": {
+      "description": "Ideal cold-air-standard Brayton cycle (constant cp, k).",
+      "property_model": "constant-cp, cp = 1005 J/(kg K), k = 1.4, R = cp(1 - 1/k) = 287.142857 J/(kg K) for exact isentropic consistency (Table A-1 R = 287.0 differs by 0.05 %).",
+      "inputs": {
+        "T1": 300.0,
+        "P1": 101325.0,
+        "rp": 10.0,
+        "T3": 1400.0,
+        "eta_c": 1.0,
+        "eta_t": 1.0,
+        "eta_comb": 1.0,
+        "dp_comb": 0.0,
+        "cp": 1005.0,
+        "k": 1.4
+      },
+      "input_citations": {
+        "T1, P1, rp, T3": "assignment specification (textbook-style example values)",
+        "eta = 1, dP = 0": "ideal-cycle definition, [1] Ch. 9",
+        "cp, k": "[1] Table A-2a (300 K)"
+      },
+      "expected": {
+        "states": [
+          {
+            "label": "1",
+            "T": 300.0,
+            "P": 101325.0,
+            "h": 1859.2500000000227,
+            "s": 6.216687882521753
+          },
+          {
+            "label": "2s",
+            "T": 579.2093186649752,
+            "P": 1013250.0,
+            "h": 282464.6152583001,
+            "s": 6.216687882521796
+          },
+          {
+            "label": "2",
+            "T": 579.2093186649752,
+            "P": 1013250.0,
+            "h": 282464.6152583001,
+            "s": 6.216687882521796
+          },
+          {
+            "label": "3",
+            "T": 1400.0,
+            "P": 1013250.0,
+            "h": 1107359.25,
+            "s": 893.1930916175444
+          },
+          {
+            "label": "4s",
+            "T": 725.1264550923695,
+            "P": 101325.0,
+            "h": 429111.3373678314,
+            "s": 893.1930916175445
+          },
+          {
+            "label": "4",
+            "T": 725.1264550923695,
+            "P": 101325.0,
+            "h": 429111.3373678314,
+            "s": 893.1930916175445
+          }
+        ],
+        "w_c": 280605.3652583001,
+        "w_t": 678247.9126321686,
+        "w_net": 397642.5473738685,
+        "q_in": 824894.6347416999,
+        "q_out": 427252.0873678314,
+        "bwr": 0.41372094190355385,
+        "eta_th": 0.4820525320768788,
+        "first_law_residual": 0.0,
+        "s_gen": {
+          "compressor": 4.3520742565306136e-14,
+          "combustor": 297.76595034809407,
+          "turbine": 1.1368683772161603e-13,
+          "heat_rejection": 537.1972208244152,
+          "total": 834.9631711725094
+        },
+        "fuel_air_ratio": null,
+        "sfc_kg_per_kWh": null,
+        "analytical": {
+          "eta_th_cold_air": 0.4820525320768788,
+          "T2_closed_form": 579.209318664975,
+          "T4_closed_form": 725.1264550923697,
+          "rp_opt_w_net": 14.817054103350625,
+          "w_net_max": 405871.1196200201
+        }
+      },
+      "tolerances": {
+        "rel_tol_states_and_energies": 1e-09,
+        "abs_tol_s_gen": 1e-09,
+        "rel_tol_vs_analytical_eta": 1e-12,
+        "note": "Closed-form model: solver must match to round-off (REQ-N02)."
+      }
+    },
+    "B_irreversible_variable_cp": {
+      "description": "Irreversible cycle, variable cp from Table A-2c polynomial.",
+      "property_model": "variable-cp, [1] Table A-2c air polynomial, T in K, coefficients exactly as published; R = 287.0 J/(kg K) [1] Table A-1.",
+      "inputs": {
+        "T1": 288.15,
+        "P1": 101325.0,
+        "rp": 14.0,
+        "T3": 1500.0,
+        "eta_c": 0.86,
+        "eta_t": 0.89,
+        "eta_comb": 0.99,
+        "dp_comb": 0.03,
+        "lhv": 43000000.0,
+        "mdot": 25.0
+      },
+      "input_citations": {
+        "T1 = 288.15 K, P1 = 101325 Pa": "sea-level standard atmosphere [FLAG: ISO 2533 not in reference list]",
+        "rp, T3, mdot": "assignment specification",
+        "eta_c, eta_t, eta_comb, dP_comb": "assignment specification; typical ranges per [7] [FLAG: page to record]",
+        "LHV": "[7] kerosene ~43 MJ/kg",
+        "cp polynomial": "[1] Table A-2c"
+      },
+      "expected": {
+        "states": [
+          {
+            "label": "1",
+            "T": 288.15,
+            "P": 101325.0,
+            "h": -10027.543142708895,
+            "s": -34.20935946275914
+          },
+          {
+            "label": "2s",
+            "T": 603.3890275254824,
+            "P": 1418550.0,
+            "h": 314078.69859507907,
+            "s": -34.209359462759494
+          },
+          {
+            "label": "2",
+            "T": 653.0902585130975,
+            "P": 1418550.0,
+            "h": 366840.1798082073,
+            "s": 49.81245370206284
+          },
+          {
+            "label": "3",
+            "T": 1500.0,
+            "P": 1375993.5,
+            "h": 1338796.8082357494,
+            "s": 1003.9611247434657
+          },
+          {
+            "label": "4s",
+            "T": 783.7045174996327,
+            "P": 101325.0,
+            "h": 507838.93323283526,
+            "s": 1003.9611247434656
+          },
+          {
+            "label": "4",
+            "T": 866.7185024211395,
+            "P": 101325.0,
+            "h": 599244.2994831558,
+            "s": 1114.806447026412
+          }
+        ],
+        "w_c": 376867.7229509162,
+        "w_t": 739552.5087525935,
+        "w_net": 362684.7858016773,
+        "q_in": 971956.628427542,
+        "q_out": 609271.8426258648,
+        "bwr": 0.5095888641992178,
+        "eta_th": 0.37314914595359944,
+        "first_law_residual": 5.988709702781424e-17,
+        "s_gen": {
+          "compressor": 84.02181316482198,
+          "combustor": 306.1775854230415,
+          "turbine": 110.8453222829462,
+          "heat_rejection": 965.4101613257337,
+          "total": 1466.4548821965434
+        },
+        "fuel_air_ratio": 0.022831962143000754,
+        "sfc_kg_per_kWh": 0.22662947808279027,
+        "net_power_W": 9067119.645041933,
+        "fuel_flow_kg_per_s": 0.5707990535750188
+      },
+      "tolerances": {
+        "rel_tol_temperatures": 1e-06,
+        "rel_tol_energies": 1e-06,
+        "abs_tol_entropy": 0.0001,
+        "first_law_residual_max": 1e-06,
+        "rel_tol_vs_coolprop_cantera": 0.015,
+        "note": "Same polynomial -> only root-finder tolerance differs. Cross-backend tolerance reflects the 0.72 % polynomial error plus real-gas/composition differences [2][3][4]."
+      }
+    }
+  },
+  "table_A17_spot_checks": {
+    "purpose": "Day-5 validation of the variable-cp backend against tabulated air properties. Compare DIFFERENCES only (A-17 datum differs from T_ref).",
+    "citation": "[1] Table A-17",
+    "status": "FLAG: transcribed without the printed table at hand - verify against your edition before relying on them.",
+    "points_kJ_per_kg": [
+      {
+        "T": 300.0,
+        "h": 300.19,
+        "s0": 1.70203
+      },
+      {
+        "T": 1000.0,
+        "h": 1046.04,
+        "s0": 2.9677
+      },
+      {
+        "T": 1500.0,
+        "h": 1635.97,
+        "s0": 3.44516
+      }
+    ],
+    "tolerance_rel_on_differences": 0.01
+  }
+}

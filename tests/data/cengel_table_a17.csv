@@ -1,0 +1,11 @@
+# Ideal-gas properties of air.
+# Source: [1] Cengel, Y. A., Boles, M. A., & Kanoglu, M. (2019). Thermodynamics:
+#         An Engineering Approach (9th ed.). McGraw-Hill. Table A-17.
+# Units: T [K], h [kJ/kg], s0 [kJ/(kg*K)]. A-17 uses its own datum (h, s0 at 0 K),
+#        so compare only DIFFERENCES between rows, never absolute values.
+# FLAG: transcribed without the printed table at hand. Verify against your
+#       edition (also mirrored in validation_reference_data.json).
+T,h,s0
+300,300.19,1.70203
+1000,1046.04,2.96770
+1500,1635.97,3.44516

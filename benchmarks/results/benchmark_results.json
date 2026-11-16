@@ -1,0 +1,865 @@
+{
+  "machine": {
+    "timestamp_utc": "2026-11-16T13:38:21+00:00",
+    "brayton_cycle": "0.1.0",
+    "python": "3.13.18",
+    "implementation": "CPython",
+    "platform": "Linux-6.18.44-fc-v470-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "cpu_count": 2,
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "pandas": "3.0.5",
+    "matplotlib": "3.11.2",
+    "optional_backends": {
+      "coolprop": false,
+      "cantera": false
+    }
+  },
+  "verification": {
+    "command": "python3 stdlib_coverage.py --json",
+    "returncode": 0,
+    "duration_s": 5.362306773,
+    "tests": 524,
+    "passed": 440,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 84,
+    "summary_line": "440 passed, 84 skipped in 4.85s",
+    "coverage": {
+      "tool": "tools/stdlib_coverage.py (sys.monitoring)",
+      "total_percent": 97.2,
+      "non_gui_percent": 97.7,
+      "packages": {
+        "(top-level)": 91.7,
+        "analysis": 98.0,
+        "components": 99.2,
+        "core": 97.8,
+        "extensibility": 97.3,
+        "gui": 94.9,
+        "properties": 97.8,
+        "reporting": 99.4,
+        "solver": 96.9
+      }
+    }
+  },
+  "validation": {
+    "rows": [
+      {
+        "case": "A",
+        "quantity": "T1 [K]",
+        "reference": 300.0,
+        "computed": 300.0,
+        "abs_error": 0.0,
+        "rel_error": 0.0,
+        "tolerance": 3.0000000000000004e-07,
+        "tolerance_rule": "max(1e-09\u00b7|ref|, 0)",
+        "passed": true
+      },
+      {
+        "case": "A",
+        "quantity": "h1 [J/kg]",
+        "reference": 1859.2500000000227,
+        "computed": 1859.2500000000225,
+        "abs_error": 2.2737367544323206e-13,
+        "rel_error": 1.2229322331221153e-16,
+        "tolerance": 1.859250000000023e-06,
+        "tolerance_rule": "max(1e-09\u00b7|ref|, 1e-06)",
+        "passed": true
+      },
+      {
+        "case": "A",
+        "quantity": "s1 [J/(kg\u00b7K)]",
+        "reference": 6.216687882521753,
+        "computed": 6.216687882521752,
+        "abs_error": 8.881784197001252e-16,
+        "rel_error": 1.4287003569814773e-16,
+        "tolerance": 1e-09,
+        "tolerance_rule": "max(0\u00b7|ref|, 1e-09)",
+        "passed": true
+      },
+      {
+        "case": "A",
+        "quantity": "T2s [K]",
+        "reference": 579.2093186649752,
+        "computed": 579.2093186649751,
+        "abs_error": 1.1368683772161603e-13,
+        "rel_error": 1.9627936578032595e-16,
+        "tolerance": 5.792093186649752e-07,
+        "tolerance_rule": "max(1e-09\u00b7|ref|, 0)",
+        "passed": true
+      },
+      {
+        "case": "A",
+        "quantity": "h2s [J/kg]",
+        "reference": 282464.6152583001,
+        "computed": 282464.6152582999,
+        "abs_error": 1.7462298274040222e-10,
+        "rel_error": 6.182118867551535e-16,
+        "tolerance": 0.0002824646152583001,
+        "tolerance_rule": "max(1e-09\u00b7|ref|, 1e-06)",
+        "passed": true
+      },
+      {
+        "case": "A",
+        "quantity": "s2s [J/(kg\u00b7K)]",
+        "reference": 6.216687882521796,
+        "computed": 6.216687882521683,
+        "abs_error": 1.1368683772161603e-13,
+        "rel_error": 1.828736456936278e-14,
+        "tolerance": 1e-09,
+        "tolerance_rule": "max(0\u00b7|ref|, 1e-09)",
+        "passed": true
+      },
+      {
+        "case": "A",
+        "quantity": "T2 [K]",
+        "reference": 579.2093186649752,
+        "computed": 579.2093186649751,
+        "abs_error": 1.1368683772161603e-13,
+        "rel_error": 1.9627936578032595e-16,
+        "tolerance": 5.792093186649752e-07,
+        "tolerance_rule": "max(1e-09\u00b7|ref|, 0)",
+        "passed": true
+      },
+      {
+        "case": "A",
+        "quantity": "h2 [J/kg]",
+        "reference": 282464.6152583001,
+        "computed": 282464.6152582999,
+        "abs_error": 1.7462298274040222e-10,
+        "rel_error": 6.182118867551535e-16,
+        "tolerance": 0.0002824646152583001,
+        "tolerance_rule": "max(1e-09\u00b7|ref|, 1e-06)",
+        "passed": true
+      },
+      {
+        "case": "A",
+        "quantity": "s2 [J/(kg\u00b7K)]",
+        "reference": 6.216687882521796,
+        "computed": 6.216687882521683,
+        "abs_error": 1.1368683772161603e-13,
+        "rel_error": 1.828736456936278e-14,
+        "tolerance": 1e-09,
+        "tolerance_rule": "max(0\u00b7|ref|, 1e-09)",
+        "passed": true
+      },
+      {
+        "case": "A",
+        "quantity": "T3 [K]",
+        "reference": 1400.0,
+        "computed": 1400.0,
+        "abs_error": 0.0,
+        "rel_error": 0.0,
+        "tolerance": 1.4000000000000001e-06,
+        "tolerance_rule": "max(1e-09\u00b7|ref|, 0)",
+        "passed": true
+      },
+      {
+        "case": "A",
+        "quantity": "h3 [J/kg]",
+        "reference": 1107359.25,
+        "computed": 1107359.2499999998,
+        "abs_error": 2.3283064365386963e-10,
+        "rel_error": 2.1025755070350442e-16,
+        "tolerance": 0.0011073592500000001,
+        "tolerance_rule": "max(1e-09\u00b7|ref|, 1e-06)",
+        "passed": true
+      },
+      {
+        "case": "A",
+        "quantity": "s3 [J/(kg\u00b7K)]",
+        "reference": 893.1930916175444,
+        "computed": 893.1930916175444,
+        "abs_error": 0.0,
+        "rel_error": 0.0,
+        "tolerance": 1e-09,
+        "tolerance_rule": "max(0\u00b7|ref|, 1e-09)",
+        "passed": true
+      },
+      {
+        "case": "A",
+        "quantity": "T4s [K]",
+        "reference": 725.1264550923695,
+        "computed": 725.1264550923696,
+        "abs_error": 1.1368683772161603e-13,
+        "rel_error": 1.567820852807448e-16,
+        "tolerance": 7.251264550923696e-07,
+        "tolerance_rule": "max(1e-09\u00b7|ref|, 0)",
+        "passed": true
+      },
+      {
+        "case": "A",
+        "quantity": "h4s [J/kg]",
+        "reference": 429111.3373678314,
+        "computed": 429111.3373678314,
+        "abs_error": 0.0,
+        "rel_error": 0.0,
+        "tolerance": 0.0004291113373678314,
+        "tolerance_rule": "max(1e-09\u00b7|ref|, 1e-06)",
+        "passed": true
+      },
+      {
+        "case": "A",
+        "quantity": "s4s [J/(kg\u00b7K)]",
+        "reference": 893.1930916175445,
+        "computed": 893.1930916175444,
+        "abs_error": 1.1368683772161603e-13,
+        "rel_error": 1.2728136702863739e-16,
+        "tolerance": 1e-09,
+        "tolerance_rule": "max(0\u00b7|ref|, 1e-09)",
+        "passed": true
+      },
+      {
+        "case": "A",
+        "quantity": "T4 [K]",
+        "reference": 725.1264550923695,
+        "computed": 725.1264550923696,
+        "abs_error": 1.1368683772161603e-13,
+        "rel_error": 1.567820852807448e-16,
+        "tolerance": 7.251264550923696e-07,
+        "tolerance_rule": "max(1e-09\u00b7|ref|, 0)",
+        "passed": true
+      },
+      {
+        "case": "A",
+        "quantity": "h4 [J/kg]",
+        "reference": 429111.3373678314,
+        "computed": 429111.3373678314,
+        "abs_error": 0.0,
+        "rel_error": 0.0,
+        "tolerance": 0.0004291113373678314,
+        "tolerance_rule": "max(1e-09\u00b7|ref|, 1e-06)",
+        "passed": true
+      },
+      {
+        "case": "A",
+        "quantity": "s4 [J/(kg\u00b7K)]",
+        "reference": 893.1930916175445,
+        "computed": 893.1930916175444,
+        "abs_error": 1.1368683772161603e-13,
+        "rel_error": 1.2728136702863739e-16,
+        "tolerance": 1e-09,
+        "tolerance_rule": "max(0\u00b7|ref|, 1e-09)",
+        "passed": true
+      },
+      {
+        "case": "A",
+        "quantity": "w_c [J/kg]",
+        "reference": 280605.3652583001,
+        "computed": 280605.3652582999,
+        "abs_error": 1.7462298274040222e-10,
+        "rel_error": 6.223080680572874e-16,
+        "tolerance": 0.00028060536525830013,
+        "tolerance_rule": "max(1e-09\u00b7|ref|, 0)",
+        "passed": true
+      },
+      {
+        "case": "A",
+        "quantity": "w_t [J/kg]",
+        "reference": 678247.9126321686,
+        "computed": 678247.9126321684,
+        "abs_error": 2.3283064365386963e-10,
+        "rel_error": 3.432825067611225e-16,
+        "tolerance": 0.0006782479126321686,
+        "tolerance_rule": "max(1e-09\u00b7|ref|, 0)",
+        "passed": true
+      },
+      {
+        "case": "A",
+        "quantity": "w_net [J/kg]",
+        "reference": 397642.5473738685,
+        "computed": 397642.54737386847,
+        "abs_error": 5.820766091346741e-11,
+        "rel_error": 1.4638187311163116e-16,
+        "tolerance": 0.00039764254737386853,
+        "tolerance_rule": "max(1e-09\u00b7|ref|, 0)",
+        "passed": true
+      },
+      {
+        "case": "A",
+        "quantity": "q_in [J/kg]",
+        "reference": 824894.6347416999,
+        "computed": 824894.6347416998,
+        "abs_error": 1.1641532182693481e-10,
+        "rel_error": 1.4112750516723639e-16,
+        "tolerance": 0.0008248946347416999,
+        "tolerance_rule": "max(1e-09\u00b7|ref|, 0)",
+        "passed": true
+      },
+      {
+        "case": "A",
+        "quantity": "q_out [J/kg]",
+        "reference": 427252.0873678314,
+        "computed": 427252.0873678314,
+        "abs_error": 0.0,
+        "rel_error": 0.0,
+        "tolerance": 0.00042725208736783143,
+        "tolerance_rule": "max(1e-09\u00b7|ref|, 0)",
+        "passed": true
+      },
+      {
+        "case": "A",
+        "quantity": "BWR [-]",
+        "reference": 0.41372094190355385,
+        "computed": 0.41372094190355374,
+        "abs_error": 1.1102230246251565e-16,
+        "rel_error": 2.6835069540278926e-16,
+        "tolerance": 4.137209419035539e-10,
+        "tolerance_rule": "max(1e-09\u00b7|ref|, 0)",
+        "passed": true
+      },
+      {
+        "case": "A",
+        "quantity": "eta_th [-]",
+        "reference": 0.4820525320768788,
+        "computed": 0.4820525320768788,
+        "abs_error": 0.0,
+        "rel_error": 0.0,
+        "tolerance": 4.820525320768789e-10,
+        "tolerance_rule": "max(1e-09\u00b7|ref|, 0)",
+        "passed": true
+      },
+      {
+        "case": "A",
+        "quantity": "s_gen compressor [J/(kg\u00b7K)]",
+        "reference": 4.3520742565306136e-14,
+        "computed": -6.927791673660977e-14,
+        "abs_error": 1.127986593019159e-13,
+        "rel_error": 2.5918367346938775,
+        "tolerance": 1e-09,
+        "tolerance_rule": "max(1e-09\u00b7|ref|, 1e-09)",
+        "passed": true
+      },
+      {
+        "case": "A",
+        "quantity": "s_gen combustor [J/(kg\u00b7K)]",
+        "reference": 297.76595034809407,
+        "computed": 297.7659503480943,
+        "abs_error": 2.2737367544323206e-13,
+        "rel_error": 7.635986424150508e-16,
+        "tolerance": 2.977659503480941e-07,
+        "tolerance_rule": "max(1e-09\u00b7|ref|, 1e-09)",
+        "passed": true
+      },
+      {
+        "case": "A",
+        "quantity": "s_gen turbine [J/(kg\u00b7K)]",
+        "reference": 1.1368683772161603e-13,
+        "computed": 0.0,
+        "abs_error": 1.1368683772161603e-13,
+        "rel_error": 1.0,
+        "tolerance": 1e-09,
+        "tolerance_rule": "max(1e-09\u00b7|ref|, 1e-09)",
+        "passed": true
+      },
+      {
+        "case": "A",
+        "quantity": "s_gen heat_rejection [J/(kg\u00b7K)]",
+        "reference": 537.1972208244152,
+        "computed": 537.1972208244154,
+        "abs_error": 1.1368683772161603e-13,
+        "rel_error": 2.116296088560275e-16,
+        "tolerance": 5.371972208244153e-07,
+        "tolerance_rule": "max(1e-09\u00b7|ref|, 1e-09)",
+        "passed": true
+      },
+      {
+        "case": "A",
+        "quantity": "s_gen total [J/(kg\u00b7K)]",
+        "reference": 834.9631711725094,
+        "computed": 834.9631711725095,
+        "abs_error": 1.1368683772161603e-13,
+        "rel_error": 1.3615790689542581e-16,
+        "tolerance": 8.349631711725095e-07,
+        "tolerance_rule": "max(1e-09\u00b7|ref|, 1e-09)",
+        "passed": true
+      },
+      {
+        "case": "A",
+        "quantity": "First-Law residual [-]",
+        "reference": 0.0,
+        "computed": 7.056375258361819e-17,
+        "abs_error": 7.056375258361819e-17,
+        "rel_error": null,
+        "tolerance": 1e-06,
+        "tolerance_rule": "max(0\u00b7|ref|, 1e-06)",
+        "passed": true
+      },
+      {
+        "case": "A",
+        "quantity": "eta_th vs 1 - r_p^((1-\u03b3)/\u03b3)",
+        "reference": 0.4820525320768788,
+        "computed": 0.4820525320768788,
+        "abs_error": 0.0,
+        "rel_error": 0.0,
+        "tolerance": 4.820525320768788e-13,
+        "tolerance_rule": "max(1e-12\u00b7|ref|, 0)",
+        "passed": true
+      },
+      {
+        "case": "A",
+        "quantity": "r_p,opt(w_net) vs analytic",
+        "reference": 14.817054103350625,
+        "computed": 14.817053044899039,
+        "abs_error": 1.0584515859335397e-06,
+        "rel_error": 7.14346845567763e-08,
+        "tolerance": 0.14817054103350624,
+        "tolerance_rule": "max(0.01\u00b7|ref|, 0)",
+        "passed": true
+      },
+      {
+        "case": "A",
+        "quantity": "w_net,max vs analytic [J/kg]",
+        "reference": 405871.1196200201,
+        "computed": 405871.11962001986,
+        "abs_error": 2.3283064365386963e-10,
+        "rel_error": 5.736565929397677e-16,
+        "tolerance": 0.4058711196200201,
+        "tolerance_rule": "max(1e-06\u00b7|ref|, 0)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "T1 [K]",
+        "reference": 288.15,
+        "computed": 288.15,
+        "abs_error": 0.0,
+        "rel_error": 0.0,
+        "tolerance": 0.00028815,
+        "tolerance_rule": "max(1e-06\u00b7|ref|, 0)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "h1 [J/kg]",
+        "reference": -10027.543142708895,
+        "computed": -10027.543142708872,
+        "abs_error": 2.3646862246096134e-11,
+        "rel_error": 2.3581910254148296e-15,
+        "tolerance": 0.010027543142708895,
+        "tolerance_rule": "max(1e-06\u00b7|ref|, 1e-06)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "s1 [J/(kg\u00b7K)]",
+        "reference": -34.20935946275914,
+        "computed": -34.2093594627595,
+        "abs_error": 3.623767952376511e-13,
+        "rel_error": 1.0592913779404153e-14,
+        "tolerance": 0.0001,
+        "tolerance_rule": "max(0\u00b7|ref|, 0.0001)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "T2s [K]",
+        "reference": 603.3890275254824,
+        "computed": 603.389027525483,
+        "abs_error": 5.684341886080801e-13,
+        "rel_error": 9.420691505433018e-16,
+        "tolerance": 0.0006033890275254824,
+        "tolerance_rule": "max(1e-06\u00b7|ref|, 0)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "h2s [J/kg]",
+        "reference": 314078.69859507907,
+        "computed": 314078.69859507965,
+        "abs_error": 5.820766091346741e-10,
+        "rel_error": 1.853282670039037e-15,
+        "tolerance": 0.31407869859507903,
+        "tolerance_rule": "max(1e-06\u00b7|ref|, 1e-06)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "s2s [J/(kg\u00b7K)]",
+        "reference": -34.209359462759494,
+        "computed": -34.20935946275938,
+        "abs_error": 1.1368683772161603e-13,
+        "rel_error": 3.3232670680483268e-15,
+        "tolerance": 0.0001,
+        "tolerance_rule": "max(0\u00b7|ref|, 0.0001)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "T2 [K]",
+        "reference": 653.0902585130975,
+        "computed": 653.0902585130982,
+        "abs_error": 6.821210263296962e-13,
+        "rel_error": 1.044451386983927e-15,
+        "tolerance": 0.0006530902585130975,
+        "tolerance_rule": "max(1e-06\u00b7|ref|, 0)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "h2 [J/kg]",
+        "reference": 366840.1798082073,
+        "computed": 366840.17980820785,
+        "abs_error": 5.238689482212067e-10,
+        "rel_error": 1.4280577130212335e-15,
+        "tolerance": 0.3668401798082073,
+        "tolerance_rule": "max(1e-06\u00b7|ref|, 1e-06)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "s2 [J/(kg\u00b7K)]",
+        "reference": 49.81245370206284,
+        "computed": 49.8124537020625,
+        "abs_error": 3.410605131648481e-13,
+        "rel_error": 6.846892449924105e-15,
+        "tolerance": 0.0001,
+        "tolerance_rule": "max(0\u00b7|ref|, 0.0001)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "T3 [K]",
+        "reference": 1500.0,
+        "computed": 1500.0,
+        "abs_error": 0.0,
+        "rel_error": 0.0,
+        "tolerance": 0.0015,
+        "tolerance_rule": "max(1e-06\u00b7|ref|, 0)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "h3 [J/kg]",
+        "reference": 1338796.8082357494,
+        "computed": 1338796.8082357496,
+        "abs_error": 2.3283064365386963e-10,
+        "rel_error": 1.7391036654822259e-16,
+        "tolerance": 1.3387968082357493,
+        "tolerance_rule": "max(1e-06\u00b7|ref|, 1e-06)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "s3 [J/(kg\u00b7K)]",
+        "reference": 1003.9611247434657,
+        "computed": 1003.9611247434646,
+        "abs_error": 1.1368683772161603e-12,
+        "rel_error": 1.1323828674209425e-15,
+        "tolerance": 0.0001,
+        "tolerance_rule": "max(0\u00b7|ref|, 0.0001)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "T4s [K]",
+        "reference": 783.7045174996327,
+        "computed": 783.7045174996326,
+        "abs_error": 1.1368683772161603e-13,
+        "rel_error": 1.4506339466349867e-16,
+        "tolerance": 0.0007837045174996327,
+        "tolerance_rule": "max(1e-06\u00b7|ref|, 0)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "h4s [J/kg]",
+        "reference": 507838.93323283526,
+        "computed": 507838.93323283514,
+        "abs_error": 1.1641532182693481e-10,
+        "rel_error": 2.292367012624462e-16,
+        "tolerance": 0.5078389332328352,
+        "tolerance_rule": "max(1e-06\u00b7|ref|, 1e-06)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "s4s [J/(kg\u00b7K)]",
+        "reference": 1003.9611247434656,
+        "computed": 1003.9611247434647,
+        "abs_error": 9.094947017729282e-13,
+        "rel_error": 9.059062939367542e-16,
+        "tolerance": 0.0001,
+        "tolerance_rule": "max(0\u00b7|ref|, 0.0001)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "T4 [K]",
+        "reference": 866.7185024211395,
+        "computed": 866.7185024211393,
+        "abs_error": 2.2737367544323206e-13,
+        "rel_error": 2.623385502998653e-16,
+        "tolerance": 0.0008667185024211395,
+        "tolerance_rule": "max(1e-06\u00b7|ref|, 0)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "h4 [J/kg]",
+        "reference": 599244.2994831558,
+        "computed": 599244.2994831556,
+        "abs_error": 2.3283064365386963e-10,
+        "rel_error": 3.885404397750375e-16,
+        "tolerance": 0.5992442994831558,
+        "tolerance_rule": "max(1e-06\u00b7|ref|, 1e-06)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "s4 [J/(kg\u00b7K)]",
+        "reference": 1114.806447026412,
+        "computed": 1114.8064470264105,
+        "abs_error": 1.3642420526593924e-12,
+        "rel_error": 1.2237479037713807e-15,
+        "tolerance": 0.0001,
+        "tolerance_rule": "max(0\u00b7|ref|, 0.0001)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "w_c [J/kg]",
+        "reference": 376867.7229509162,
+        "computed": 376867.72295091674,
+        "abs_error": 5.238689482212067e-10,
+        "rel_error": 1.3900605340230639e-15,
+        "tolerance": 0.3768677229509162,
+        "tolerance_rule": "max(1e-06\u00b7|ref|, 0)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "w_t [J/kg]",
+        "reference": 739552.5087525935,
+        "computed": 739552.508752594,
+        "abs_error": 4.656612873077393e-10,
+        "rel_error": 6.296527721786411e-16,
+        "tolerance": 0.7395525087525935,
+        "tolerance_rule": "max(1e-06\u00b7|ref|, 0)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "w_net [J/kg]",
+        "reference": 362684.7858016773,
+        "computed": 362684.78580167727,
+        "abs_error": 5.820766091346741e-11,
+        "rel_error": 1.6049104674960482e-16,
+        "tolerance": 0.3626847858016773,
+        "tolerance_rule": "max(1e-06\u00b7|ref|, 0)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "q_in [J/kg]",
+        "reference": 971956.628427542,
+        "computed": 971956.6284275418,
+        "abs_error": 2.3283064365386963e-10,
+        "rel_error": 2.3954838811125697e-16,
+        "tolerance": 0.971956628427542,
+        "tolerance_rule": "max(1e-06\u00b7|ref|, 0)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "q_out [J/kg]",
+        "reference": 609271.8426258648,
+        "computed": 609271.8426258644,
+        "abs_error": 3.4924596548080444e-10,
+        "rel_error": 5.732186210601984e-16,
+        "tolerance": 0.6092718426258648,
+        "tolerance_rule": "max(1e-06\u00b7|ref|, 0)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "BWR [-]",
+        "reference": 0.5095888641992178,
+        "computed": 0.5095888641992182,
+        "abs_error": 4.440892098500626e-16,
+        "rel_error": 8.714656874378855e-16,
+        "tolerance": 5.095888641992177e-07,
+        "tolerance_rule": "max(1e-06\u00b7|ref|, 0)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "eta_th [-]",
+        "reference": 0.37314914595359944,
+        "computed": 0.3731491459535995,
+        "abs_error": 5.551115123125783e-17,
+        "rel_error": 1.4876397771029752e-16,
+        "tolerance": 3.7314914595359943e-07,
+        "tolerance_rule": "max(1e-06\u00b7|ref|, 0)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "f [-]",
+        "reference": 0.022831962143000754,
+        "computed": 0.022831962143000747,
+        "abs_error": 6.938893903907228e-18,
+        "rel_error": 3.039114142029348e-16,
+        "tolerance": 2.2831962143000754e-08,
+        "tolerance_rule": "max(1e-06\u00b7|ref|, 0)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "SFC [kg/kWh]",
+        "reference": 0.22662947808279027,
+        "computed": 0.22662947808279024,
+        "abs_error": 2.7755575615628914e-17,
+        "rel_error": 1.224711624031958e-16,
+        "tolerance": 2.2662947808279027e-07,
+        "tolerance_rule": "max(1e-06\u00b7|ref|, 0)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "W_net [W]",
+        "reference": 9067119.645041933,
+        "computed": 9067119.645041931,
+        "abs_error": 1.862645149230957e-09,
+        "rel_error": 2.0542853983949418e-16,
+        "tolerance": 9.067119645041933,
+        "tolerance_rule": "max(1e-06\u00b7|ref|, 0)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "s_gen compressor [J/(kg\u00b7K)]",
+        "reference": 84.02181316482198,
+        "computed": 84.02181316482199,
+        "abs_error": 1.4210854715202004e-14,
+        "rel_error": 1.6913292132038596e-16,
+        "tolerance": 0.0001,
+        "tolerance_rule": "max(1e-06\u00b7|ref|, 0.0001)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "s_gen combustor [J/(kg\u00b7K)]",
+        "reference": 306.1775854230415,
+        "computed": 306.1775854230408,
+        "abs_error": 6.821210263296962e-13,
+        "rel_error": 2.227860754036644e-15,
+        "tolerance": 0.00030617758542304146,
+        "tolerance_rule": "max(1e-06\u00b7|ref|, 0.0001)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "s_gen turbine [J/(kg\u00b7K)]",
+        "reference": 110.8453222829462,
+        "computed": 110.84532228294597,
+        "abs_error": 2.2737367544323206e-13,
+        "rel_error": 2.0512699206452124e-15,
+        "tolerance": 0.0001108453222829462,
+        "tolerance_rule": "max(1e-06\u00b7|ref|, 0.0001)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "s_gen heat_rejection [J/(kg\u00b7K)]",
+        "reference": 965.4101613257337,
+        "computed": 965.4101613257337,
+        "abs_error": 0.0,
+        "rel_error": 0.0,
+        "tolerance": 0.0009654101613257337,
+        "tolerance_rule": "max(1e-06\u00b7|ref|, 0.0001)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "s_gen total [J/(kg\u00b7K)]",
+        "reference": 1466.4548821965434,
+        "computed": 1466.4548821965425,
+        "abs_error": 9.094947017729282e-13,
+        "rel_error": 6.201995798265767e-16,
+        "tolerance": 0.0014664548821965433,
+        "tolerance_rule": "max(1e-06\u00b7|ref|, 0.0001)",
+        "passed": true
+      },
+      {
+        "case": "B",
+        "quantity": "First-Law residual [-]",
+        "reference": 0.0,
+        "computed": 1.197741940556285e-16,
+        "abs_error": 1.197741940556285e-16,
+        "rel_error": null,
+        "tolerance": 1e-06,
+        "tolerance_rule": "max(0\u00b7|ref|, 1e-06)",
+        "passed": true
+      }
+    ],
+    "passed": 68,
+    "total": 68,
+    "all_passed": true,
+    "cross_backend": {
+      "results": {
+        "variable": {
+          "w_net": 362684.78580167727,
+          "eta_th": 0.3731491459535995,
+          "fuel_air_ratio": 0.022831962143000747,
+          "bwr": 0.5095888641992182,
+          "T4": 866.7185024211393
+        },
+        "coolprop": null,
+        "cantera": null
+      },
+      "comparisons": [],
+      "tolerance": 0.015,
+      "skipped": [
+        "coolprop",
+        "cantera"
+      ]
+    }
+  },
+  "runtime": {
+    "single_solve[constant]": {
+      "median_ms": 0.050115249999294065,
+      "min_ms": 0.04948340000225926,
+      "max_ms": 0.05398455000147351,
+      "repeats": 7,
+      "number": 20
+    },
+    "single_solve[variable]": {
+      "median_ms": 0.09234664999837605,
+      "min_ms": 0.08958089999850927,
+      "max_ms": 0.09508949999883498,
+      "repeats": 7,
+      "number": 20
+    },
+    "sweep_1d[30 pts, variable]": {
+      "median_ms": 3.412275000016507,
+      "min_ms": 3.348338999956013,
+      "max_ms": 3.7296190000120077,
+      "repeats": 7,
+      "number": 1
+    },
+    "sweep_2d[12x8, variable]": {
+      "median_ms": 10.376909999990858,
+      "min_ms": 10.32175500000676,
+      "max_ms": 10.54270299999871,
+      "repeats": 7,
+      "number": 1
+    },
+    "optimal_rp[w_net, variable]": {
+      "median_ms": 5.50569000000678,
+      "min_ms": 5.458935000035581,
+      "max_ms": 5.659726000033061,
+      "repeats": 7,
+      "number": 1
+    }
+  },
+  "baseline": {
+    "single_solve[constant]": 0.06425135000114324,
+    "single_solve[variable]": 0.09451264999995601,
+    "sweep_1d[30 pts, variable]": 3.6046710000050552,
+    "sweep_2d[12x8, variable]": 10.407904999993889,
+    "optimal_rp[w_net, variable]": 5.488699000011366
+  },
+  "regressions": []
+}

@@ -1,0 +1,26 @@
+{
+  "machine": {
+    "timestamp_utc": "2026-11-16T13:34:39+00:00",
+    "brayton_cycle": "0.1.0",
+    "python": "3.13.18",
+    "implementation": "CPython",
+    "platform": "Linux-6.18.44-fc-v470-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "cpu_count": 2,
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "pandas": "3.0.5",
+    "matplotlib": "3.11.2",
+    "optional_backends": {
+      "coolprop": false,
+      "cantera": false
+    }
+  },
+  "median_ms": {
+    "single_solve[constant]": 0.06425135000114324,
+    "single_solve[variable]": 0.09451264999995601,
+    "sweep_1d[30 pts, variable]": 3.6046710000050552,
+    "sweep_2d[12x8, variable]": 10.407904999993889,
+    "optimal_rp[w_net, variable]": 5.488699000011366
+  }
+}
